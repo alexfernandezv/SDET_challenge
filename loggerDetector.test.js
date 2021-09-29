@@ -8,6 +8,6 @@ test('given log lines, suspicious IP is detected and returned', () => {
         suspiciousIP = logger.parseLine(line)
     }, function (err) {
         if (err) throw err;
-        expect(suspiciousIP).toBe('80.238.9.179');
+        expect(suspiciousIP).toBe('80.238.9.178');
     })
   });
