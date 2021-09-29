@@ -1,0 +1,24 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "SWEIT ROCHE CODING CHALLENGE",
+  "main": "loggerDetector.js",
+  "dependencies": {
+    "jest": "^27.2.3",
+    "line-reader": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexfernandezv/SDET_challenge.git"
+  },
+  "author": "Alex Fernandez Valladares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexfernandezv/SDET_challenge/issues"
+  },
+  "homepage": "https://github.com/alexfernandezv/SDET_challenge#readme"
+}

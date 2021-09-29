@@ -1,4 +1,4 @@
-class LoggerDetection {
+class LoggerDetector {
 
     constructor() { this.ipDict = {} } 
     
@@ -22,12 +22,4 @@ class LoggerDetection {
  
 }
 
-const lineReader = require('line-reader');
-var logger = new LoggerDetection()
-var suspiciousIP = null;
-lineReader.eachLine('./logLines.txt', function(line){
-     suspiciousIP = logger.parseLine(line)
-}, function (err) {
-    if (err) throw err;
-    if(suspiciousIP=='80.238.9.179') console.log("TEST PASSED")
-})
+module.exports = LoggerDetector;
