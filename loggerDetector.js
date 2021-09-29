@@ -4,22 +4,31 @@ class LoggerDetector {
     
     parseLine(line){
         let splittedLine = line.split(",")
-
-        if (this.ipDict[splittedLine[0]]==null){
-            this.ipDict[splittedLine[0]] = 0
+        let ip = splittedLine[0]
+        let date = splittedLine [1]
+        let status = splittedLine[2]
+        
+        if (this.ipDict[ip]==null){
+            this.ipDict[ip] ={ count: 0, timeStamps: [] } 
         }
 
-        if(splittedLine[2] == "FAILURE"){
-            this.ipDict[splittedLine[0]] = this.ipDict[splittedLine[0]] + 1
+        if(status == "FAILURE"){
+            this.ipDict[ip].count += 1
+            this.ipDict[ip].timeStamps.push(date)
+            
+            while( (date - this.ipDict[ip].timeStamps[0]) > 300 ){
+                this.ipDict[ip].timeStamps.shift()
+                this.ipDict[ip].count -= 1
+            }
+            
         }
-
-        if(this.ipDict[splittedLine[0]] >= 5){
-            return splittedLine[0]   
+        
+        if(this.ipDict[ip].count >= 5){
+            return ip   
         }
-
+        
         return null
     }
  
 }
-
-module.exports = LoggerDetector;
+module.exports = LoggerDetector
