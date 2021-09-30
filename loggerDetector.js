@@ -5,11 +5,11 @@ class LoggerDetector {
     parseLine(line){
         let splittedLine = line.split(",")
         let ip = splittedLine[0]
-        let date = splittedLine [1]
+        let date = splittedLine[1]
         let status = splittedLine[2]
         
-        if (this.ipDict[ip]==null){
-            this.ipDict[ip] ={ count: 0, timeStamps: [] } 
+        if (this.ipDict[ip] == null){
+            this.ipDict[ip] = { count: 0, timeStamps: [] } 
         }
 
         if(status == "FAILURE"){
